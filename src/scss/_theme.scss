@@ -10,8 +10,8 @@
   --color-text: #{get-color('dark')};
   --color-selection-text: #{get-color('light')};
   --color-selection-bg: #{get-color('dark')};
-  --color-stroke: #{get-color('mid')};
-  --color-action-bg: #{get-color('primary')};
+  --color-stroke: #{get-color('dark')};
+  --color-action-bg: #{get-color('dark')};
   --color-action-text: #{get-color('light')};
 }
 
@@ -20,8 +20,8 @@
   --color-text: #{get-color('light')};
   --color-selection-text: #{get-color('dark')};
   --color-selection-bg: #{get-color('light')};
-  --color-stroke: #{get-color('slate')};
-  --color-action-bg: var(--color-theme-primary-glare);
+  --color-stroke: #{get-color('light')};
+  --color-action-bg: #{get-color('light')};
   --color-action-text: #{get-color('dark')};
 }
 

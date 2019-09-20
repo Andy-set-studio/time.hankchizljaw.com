@@ -8,16 +8,22 @@
   <link rel="stylesheet" href="/css/global.css" />
   <meta name="monetization" content="$pay.stronghold.co/1a171baca7344614a63a0b798870af43b82" />
 </head>
-<body>
-  <header role="banner" class="site-head">
-    <h1>Global time</h1>
-    <p>See your time in your current timezone and add as many other timezones as you like</p>
-  </header>
-  <main>
-
-  </main>
-  <footer role="contentinfo" class="site-foot">
-  </footer>
+<body class="pad-top-900 pad-bottom-900">
+  <div class="wrapper">
+    <header role="banner" class="site-head">
+      <h1>Global time</h1>
+      <p>See your time in your current timezone and add as many other timezones as you like.</p>
+    </header>
+    <main  aria-live="polite" id="main-content" class="gap-top-900 gap-bottom-900">
+      <div class="inner-wrapper">
+        <clock-items>
+          <p class="note">Because this thing generates clocks, it has to use JavaScript to work. Go ahead and enable it, if you can.</p>
+        </clock-items>
+      </div>
+    </main>
+    <footer role="contentinfo" class="site-foot">
+    </footer>
+  </div>
   <script src="/js/global.js" type="module" async defer></script>
 </body>
 </html>

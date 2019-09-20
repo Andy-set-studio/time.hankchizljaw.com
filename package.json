@@ -14,6 +14,7 @@
   "dependencies": {
     "concurrently": "^4.1.2",
     "json-to-scss": "^1.4.0",
+    "prettier": "^1.18.2",
     "sass": "^1.22.12",
     "serve": "^11.1.0",
     "stalfos": "github:hankchizljaw/stalfos#aeef4455e27e95fc9d7ee28f5ad453ae5ea1ada1"
