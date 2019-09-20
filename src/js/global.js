@@ -1,5 +1,5 @@
 import timezones from './timezones.js';
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js';
+import Vue from './lib/vue.js';
 
 const timezoneItems = timezones();
 
