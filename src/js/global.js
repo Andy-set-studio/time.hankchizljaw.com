@@ -17,14 +17,14 @@ const render = () => {
 
     // Generate an item for the grid
     result += `
-      <li class="sf-flow">
+      <li class="[ timezones__item ] [ sf-flow ]">
         <h2 class="text-600">${tz.name}</h2>
         ${tz.isCurrent ? `<p class="weight-bold">ℹ️ This is your timezone</p>` : ``}
-        <dl>
+        <dl class="[ timezones__details ] [ text-500 ]">
           <dt class="weight-bold">Date:</dt>
           <dd>${dateString}</dd>
           <dt class="weight-bold">Time:</dt>
-          <dd><span class="count">${timeString}</span></dd>
+          <dd><span class="timezones__count">${timeString}</span></dd>
         </dl>
       </li>
     `;

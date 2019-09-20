@@ -14,7 +14,8 @@
 /**
  * GLOBAL STYLES
  */
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -52,3 +53,4 @@ hr {
 // Components
 @import 'components/button';
 @import 'components/note';
+@import 'components/timezones';

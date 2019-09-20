@@ -1,0 +1,39 @@
+.timezones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-gap: 1rem;
+
+  > * {
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > * + * {
+    margin-top: 1rem;
+  }
+
+  &__item {
+    border: 1px dotted;
+    padding: get-size('base');
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: 6ch 1fr;
+    line-height: 1.1;
+    grid-row-gap: 0.5rem;
+  }
+
+  &__count {
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@supports (display: grid) {
+  .timezones > * {
+    max-width: unset;
+    margin: 0;
+  }
+}
