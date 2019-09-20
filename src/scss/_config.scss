@@ -45,17 +45,17 @@ $stalfos-config: (
       'center': 'center',
       'end': 'flex-end'
     ),
-    'output': 'responsive',
+    'output': false,
     'property': 'align-items'
   ),
   'bg': (
     'items': $stalfos-colors,
-    'output': 'standard',
+    'output': false,
     'property': 'background'
   ),
   'color': (
     'items': $stalfos-colors,
-    'output': 'standard',
+    'output': false,
     'property': 'color'
   ),
   'box': (
@@ -65,12 +65,12 @@ $stalfos-config: (
       'inline-flex': 'inline-flex',
       'hide': 'none'
     ),
-    'output': 'responsive',
+    'output': false,
     'property': 'display'
   ),
   'font': (
     'items': map-get($tokens, 'fonts'),
-    'output': 'standard',
+    'output': false,
     'property': 'font-family'
   ),
   'gap-top': (
@@ -89,7 +89,7 @@ $stalfos-config: (
       'mid': '1.5',
       'loose': '1.7'
     ),
-    'output': 'standard',
+    'output': false,
     'property': 'line-height'
   ),
   'measure': (
@@ -98,7 +98,7 @@ $stalfos-config: (
       'short': '60ch',
       'compact': '40ch'
     ),
-    'output': 'standard',
+    'output': false,
     'property': 'max-width'
   ),
   'pad-top': (
@@ -113,7 +113,7 @@ $stalfos-config: (
   ),
   'pad-left': (
     'items': $stalfos-size-scale,
-    'output': 'standard',
+    'output': false,
     'property': 'padding-left'
   ),
   'space': (
@@ -122,7 +122,7 @@ $stalfos-config: (
       'around': 'space-around',
       'before': 'flex-end'
     ),
-    'output': 'responsive',
+    'output': false,
     'property': 'justify-content'
   ),
   'stack': (
@@ -133,7 +133,7 @@ $stalfos-config: (
       '600': 30,
       '700': 40
     ),
-    'output': 'standard',
+    'output': false,
     'property': 'z-index'
   ),
   'ta': (
@@ -142,7 +142,7 @@ $stalfos-config: (
       'left': 'left',
       'center': 'center'
     ),
-    'output': 'responsive',
+    'output': false,
     'property': 'text-align'
   ),
   'text': (
@@ -167,7 +167,7 @@ $stalfos-config: (
       'quarter': percentage(1/4),
       'third': percentage(1/3)
     ),
-    'output': 'responsive',
+    'output': false,
     'property': 'width'
   ),
   'breakpoints': (
