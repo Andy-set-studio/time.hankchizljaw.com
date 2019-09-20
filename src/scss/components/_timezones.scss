@@ -15,14 +15,27 @@
 
   &__item {
     border: 1px dotted;
-    padding: get-size('base');
+    padding: get-size(700);
+    line-height: 1.1;
+
+    // Span across 2(ish) columns
+    &[data-current] {
+      grid-column: 1/-2;
+      color: var(--color-bg);
+      background: var(--color-text);
+    }
   }
 
   &__details {
     display: grid;
-    grid-template-columns: 6ch 1fr;
+    grid-template-columns: 8ch 1fr;
     line-height: 1.1;
     grid-row-gap: 0.5rem;
+
+    [aria-hidden] {
+      text-shadow: 1px 1px 0;
+      filter: grayscale(1);
+    }
   }
 
   &__count {

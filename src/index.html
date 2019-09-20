@@ -20,8 +20,19 @@
       <theme-toggle></theme-toggle>
     </header>
     <main aria-live="polite" id="main-content" class="gap-top-900 gap-bottom-900">
-      <p class="note">
-        Because this thing generates clocks, it has to use JavaScript to work. Go ahead
+      <ul class="timezones" v-if="items.length">
+        <li class="[ timezones__item ] [ sf-flow ]" :data-current="item.isCurrent" v-for="item in items">
+          <p class="weight-bold" :class="{ 'text-700 md:text-800': item.isCurrent, 'text-600': !item.isCurrent }">{{item.name}}</p>
+          <dl class="[ timezones__details ] [ text-500 ]">
+            <dt class="weight-bold"><span aria-hidden="true">📅 </span>Date:</dt>
+            <dd>{{item.dateString}}</dd>
+            <dt class="weight-bold"><span aria-hidden="true">⏰ </span>Time:</dt>
+            <dd><span class="timezones__count">{{item.timeString}}</span></dd>
+          </dl>
+        </li>
+      </ul>
+      <p class="note" v-else>
+        Because this thing generates the live date and time, it has to use JavaScript to work. Go ahead
         and enable it, if you can.
       </p>
     </main>

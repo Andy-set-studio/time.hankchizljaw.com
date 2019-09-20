@@ -1,45 +1,40 @@
 import timezones from './timezones.js';
+import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js';
 
 const timezoneItems = timezones();
 
-// Get timezones, loop and render to main element
-const render = () => {
-  let result = '';
-  timezoneItems.forEach(tz => {
-    const now = new Date();
+export default new Vue({
+  el: '#main-content',
+  data: {
+    items: []
+  },
+  methods: {
+    processItems() {
+      let newItems = [];
 
-    // Get the formatted date in this timezone and split into parts
-    const localDateSplit = now
-      .toLocaleString('en-GB', {timeZone: tz.timezone})
-      .split(',');
-    const dateString = localDateSplit[0];
-    const timeString = localDateSplit[1].trim();
+      timezoneItems.forEach((tz, index) => {
+        const now = new Date();
+        let response = tz;
 
-    // Generate an item for the grid
-    result += `
-      <li class="[ timezones__item ] [ sf-flow ]">
-        <h2 class="text-600">${tz.name}</h2>
-        ${tz.isCurrent ? `<p class="weight-bold">ℹ️ This is your timezone</p>` : ``}
-        <dl class="[ timezones__details ] [ text-500 ]">
-          <dt class="weight-bold">Date:</dt>
-          <dd>${dateString}</dd>
-          <dt class="weight-bold">Time:</dt>
-          <dd><span class="timezones__count">${timeString}</span></dd>
-        </dl>
-      </li>
-    `;
-  });
+        // Get the formatted date in this timezone and split into parts
+        const localDateSplit = now
+          .toLocaleString('en-GB', {timeZone: tz.timezone})
+          .split(',');
 
-  document.querySelector('main').innerHTML = `<ul class="timezones">${result}</ul>`;
-};
+        response.dateString = localDateSplit[0];
+        response.timeString = localDateSplit[1].trim();
 
-// Render items, then re-render after each second (wild, I know)
-const init = () => {
-  render();
+        newItems.push(response);
+      });
 
-  setInterval(render, 1000);
-};
+      this.items = newItems;
+    }
+  },
+  mounted() {
+    this.processItems();
 
-init();
-
-export default init;
+    setInterval(() => {
+      this.processItems();
+    }, 1000);
+  }
+});
